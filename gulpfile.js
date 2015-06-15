@@ -23,4 +23,16 @@ elixir(function(mix) {
     	'../admin/plugins/daterangepicker/daterangepicker-bs3.css',
     	'../admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
     ], 'public/admin/css');
+
+    mix.scripts([
+        '../admin/plugins/jQuery/jQuery-2.1.4.min.js',
+        '../admin/plugins/jQueryUI/jquery-ui-1.10.3.min.js',
+        '../admin/plugins/bootstrap/js/bootstrap.min.js',
+        '../admin/plugins/slimScroll/jquery.slimscroll.min.js',
+        '../admin/plugins/fastclick/fastclick.min.js',
+        '../admin/plugins/datatables/jquery.dataTables.min.js',
+        '../admin/plugins/datatables/dataTables.bootstrap.min.js',
+        '../admin/plugins/datatables/dataTables.bootstrap.min.js',
+        '../admin/js/app.min.js',
+    ], 'public/admin/js');
 });
