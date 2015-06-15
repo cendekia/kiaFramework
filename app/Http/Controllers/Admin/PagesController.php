@@ -16,7 +16,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        dd('foo');
+        return view('admin.pages.index');
     }
 
     /**

@@ -14,8 +14,6 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.styles([
     	'../admin/plugins/bootstrap/css/bootstrap.min.css',
-    	'../admin/css/libs/font-awesome.min.css',
-    	'../admin/css/libs/ionicons.min.css',
     	'../admin/css/AdminLTE.min.css',
     	'../admin/css/skins/_all-skins.min.css',
     	'../admin/plugins/iCheck/flat/blue.css',
