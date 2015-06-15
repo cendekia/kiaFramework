@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
+        'model'  => kiaFramework\User::class,
         'key' => '',
         'secret' => '',
     ],

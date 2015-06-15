@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace kiaFramework\Http\Controllers\Auth;
 
-use App\User;
+use kiaFramework\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use kiaFramework\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
