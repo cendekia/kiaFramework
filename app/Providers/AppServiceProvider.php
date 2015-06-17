@@ -1,6 +1,6 @@
 <?php
 
-namespace kiaFramework\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace kiaFramework\Events;
+namespace App\Events;
 
 abstract class Event
 {

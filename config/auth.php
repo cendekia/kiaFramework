@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => kiaFramework\User::class,
+    'model' => App\User::class,
 
     /*
     |--------------------------------------------------------------------------

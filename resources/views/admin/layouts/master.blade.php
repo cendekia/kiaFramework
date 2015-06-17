@@ -35,6 +35,8 @@
 
         <!-- Main content -->
         <section class="content">
+            @include ('flash::message')
+            @include ('errors.request')
             @yield('content')
         </section><!-- /.content -->
     </div>
