@@ -5,7 +5,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Hover Data Table</h3>
+          <h3 class="box-title"></h3>
           <a href="{{ url().'/admin/pages/create' }}" class="btn btn-primary pull-right">Add New</a>
         </div>
         <div class="box-body">

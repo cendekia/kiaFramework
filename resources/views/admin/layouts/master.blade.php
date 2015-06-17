@@ -24,8 +24,8 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                {{ $page_title or "Page Title" }}
-                <small>{{ $page_description or 'Page Description' }}</small>
+                {{ $page_title or "Page Management" }}
+                <small>{{ $page_description or '' }}</small>
             </h1>
 
             @include('admin.layouts.breadcrumb')

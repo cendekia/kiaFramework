@@ -22,7 +22,7 @@
         <ul class="sidebar-menu">
             <li class="header">MENUS</li>
             @foreach($menus as $menu)
-                <li><a href="#"><span>{{ $menu->name }}</span></a></li>
+                <li><a href="{{ url().'/admin/'.$menu->slug }}"><span>{{ $menu->name }}</span></a></li>
             @endforeach
         </ul>
     </section>

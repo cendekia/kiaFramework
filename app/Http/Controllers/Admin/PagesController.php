@@ -106,6 +106,8 @@ class PagesController extends Controller
 
         $page->update($request->all());
 
+        flash('Your page has been updated!');
+
         return redirect($this->url);
     }
 
