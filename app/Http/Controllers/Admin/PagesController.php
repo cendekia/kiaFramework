@@ -3,18 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 use App\Http\Requests\PageRequest;
 use App\Models\Page;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 
 class PagesController extends Controller
 {
 
-    public function __construct()
+    public function __construct(Page $page)
     {
+        $this->page = $page;
         $this->url = 'admin/pages';
+
         // 'field' => 'type <required>|label <optional>|variable <optional>'
         $this->fields = [
             'name' => 'text',
@@ -24,6 +25,7 @@ class PagesController extends Controller
             'order' => 'text',
         ];
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +33,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pages = Page::all();
+        $pages = $this->page->all();
 
         return view('admin.pages.index', compact('pages'))->with('fields', $this->fields + ['action' => null]);
     }
@@ -45,7 +47,7 @@ class PagesController extends Controller
     {
         $fields = $this->fields + [ 'submit' => 'submit' ];
 
-        $pages = Page::whereParentId(0)->lists('name', 'id')->all();
+        $pages = $this->page->whereParentId(0)->lists('name', 'id')->all();
 
         return view('admin.pages.create', compact('fields', 'pages'));
     }
@@ -57,7 +59,7 @@ class PagesController extends Controller
      */
     public function store(PageRequest $request)
     {
-        Page::create($request->all());
+        $this->page->create($request->all());
 
         flash('Your page has been created!');
 
@@ -67,12 +69,12 @@ class PagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        return redirect(Request::url().'/edit');
     }
 
     /**
@@ -81,13 +83,13 @@ class PagesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
         $fields = $this->fields  + [ 'submit' => 'submit' ];
 
-        $page = Page::findOrFail($id);
+        $page = $this->page->where('slug', '=', $slug)->firstOrFail();
 
-        $pages = Page::whereParentId(0)->where('id', '<>', $id)->lists('name', 'id')->all();
+        $pages = $this->page->whereParentId(0)->where('id', '<>', $page->id)->lists('name', 'id')->all();
 
         return view('admin.pages.edit', compact('fields', 'page', 'pages'));
     }
@@ -100,7 +102,7 @@ class PagesController extends Controller
      */
     public function update(PageRequest $request, $id)
     {
-        $page = Page::findOrFail($id);
+        $page = $this->page->findOrFail($id);
 
         $page->update($request->all());
 

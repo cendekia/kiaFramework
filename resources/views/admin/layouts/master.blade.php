@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ $page_title or "AdminLTE Dashboard" }}</title>
+    <title>{{ $page_title or "Kia CMS" }}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     @include('admin.layouts.styles')
@@ -25,12 +25,11 @@
         <section class="content-header">
             <h1>
                 {{ $page_title or "Page Title" }}
-                <small>{{ $page_description or '' }}</small>
+                <small>{{ $page_description or 'Page Description' }}</small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>
+
+            @include('admin.layouts.breadcrumb')
+
         </section>
 
         <!-- Main content -->

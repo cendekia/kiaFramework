@@ -26,7 +26,7 @@
             			<td>{{ $page->description }}</td>
             			<td>{{ $page->order }}</td>
             			<td>
-            				<a href="{{ url().'/admin/pages/'.$page->id.'/edit' }}" class="btn btn-info">Edit</a>
+            				<a href="{{ url().'/admin/pages/'.$page->slug.'/edit' }}" class="btn btn-info">Edit</a>
             			</td>
             		</tr>
             	@endforeach
